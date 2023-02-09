@@ -7,7 +7,6 @@ WORKDIR /app
 COPY go.mod .
 COPY go.sum .
 
-RUN go get github.com/AntoniusIvan/go-Trial44DockerMultiplePackage/Controllers
 # Download Go modules
 RUN go mod download
 
