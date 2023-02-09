@@ -5,6 +5,7 @@ import (
 	"net/http"
 
 	"github.com/AntoniusIvan/go-Trial44DockerMultiplePackage/Controllers"
+	"github.com/jmoiron/sqlx"
 )
 
 func main() {
@@ -12,7 +13,8 @@ func main() {
 	// if err != nil {
 	// 	panic(err)
 	// }
-
+	sqlx := sqlx.NewDb()
+	sqlx = sqlx
 	//NATIVE SECTION
 	mux := http.NewServeMux()
 	mux.HandleFunc("/TryMainPkg", Controllers.TryMainPkg)
