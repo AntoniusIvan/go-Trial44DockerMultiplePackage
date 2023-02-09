@@ -1,5 +1,11 @@
 package message
 
+import (
+	"encoding/json"
+	"fmt"
+	"net/http"
+)
+
 // Message represents a message with a text and a timestamp
 type Message struct {
 	Text string
@@ -12,4 +18,18 @@ func NewMessage(text string) *Message {
 		Text: text,
 		//Time: lorem.Time(),
 	}
+}
+
+func TryMainPkg(w http.ResponseWriter, r *http.Request) {
+
+	jsonData, err := json.Marshal("HellowIVaunMultiple")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Println(string(jsonData))
+
+	//w.Write([]byte("oioi"))
+	w.Write([]byte(string(jsonData)))
 }
