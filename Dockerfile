@@ -7,6 +7,7 @@ WORKDIR /app
 COPY go.mod .
 COPY go.sum .
 
+RUN go get github.com/AntoniusIvan/go-Trial44DockerMultiplePackage/message
 # Download Go modules
 RUN go mod download
 
